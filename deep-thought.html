@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emulatore Pensiero Profondo</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: monospace;
+      text-align: center;
+      padding: 2rem;
+    }
+    input, button {
+      padding: 0.5rem;
+      margin: 1rem;
+      font-size: 1rem;
+      background-color: #111;
+      color: #0f0;
+      border: 1px solid #0f0;
+    }
+    .response {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: #0ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Emulatore Pensiero Profondo</h1>
+  <p>Fai una domanda sulla vita, l'universo e tutto quanto:</p>
+  <input type="text" id="question" placeholder="Es: Perché siamo qui?"/>
+  <button onclick="getAnswer()">Pensa</button>
+
+  <div class="response" id="response"></div>
+
+  <script>
+    const responses = [
+      "42",
+      "Questa domanda richiederà 7,5 milioni di anni per essere risolta.",
+      "Considera la natura ciclica del pane tostato.",
+      "Elaborazione in corso... Ancora 42.",
+      "Un asciugamano è tutto ciò di cui hai davvero bisogno.",
+      "Dati insufficienti per una risposta significativa. Prova con la Terra.",
+      "È una domanda veramente pessima.",
+      "Risposta incerta. Chiedi ai topi.",
+      "Ti consiglio di sdraiarti e ascoltare un po’ di poesia Vogon.",
+      "Scommetto che c’entra Zaphod."
+    ];
+
+    function getAnswer() {
+      const response = responses[Math.floor(Math.random() * responses.length)];
+      document.getElementById("response").textContent = response;
+    }
+  </script>
+</body>
+</html>
+
