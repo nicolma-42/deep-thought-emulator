@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deep Thought Emulator</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: monospace;
+      text-align: center;
+      padding: 2rem;
+    }
+    input, button {
+      padding: 0.5rem;
+      margin: 1rem;
+      font-size: 1rem;
+      background-color: #111;
+      color: #0f0;
+      border: 1px solid #0f0;
+    }
+    .response {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: #0ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Deep Thought Emulator</h1>
+  <p>Ask your question about life, the universe, and everything:</p>
+  <input type="text" id="question" placeholder="e.g., Why are we here?"/>
+  <button onclick="getAnswer()">Think</button>
+
+  <div class="response" id="response"></div>
+
+  <script>
+    const responses = [
+      "42",
+      "That question will take 7.5 million years to answer.",
+      "Consider the cyclical nature of toast.",
+      "Processing... Processing... still 42.",
+      "A towel is all you really need.",
+      "Insufficient data for a meaningful answer. Try Earth.",
+      "That's a really bad question.",
+      "Answer unclear. Ask the mice.",
+      "I think you should lie down and listen to some Vogon poetry.",
+      "Zaphod is probably involved."
+    ];
+
+    function getAnswer() {
+      const response = responses[Math.floor(Math.random() * responses.length)];
+      document.getElementById("response").textContent = response;
+    }
+  </script>
+</body>
+</html>
+
